@@ -89,7 +89,7 @@ a:hover {
   text-decoration: none !important;
 }
 
-.scrolltop {
+.scrolltop { 
   display: none;
   position: fixed;
   bottom: 15px;
