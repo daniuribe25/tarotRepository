@@ -79,7 +79,7 @@ jQuery(document).ready(function($) {
         else var str = {name: $('#name').val(),cel: $('#cel').val(),subject: $('#subject').val(),message: $('#message').val()}	
             $.ajax({
                 type: "POST",
-                url: "http://localhost:5000/api/sendMail",
+                url: "https://maestraisis.herokuapp.com/api/sendMail",
                 data: str,
                 dataType: 'jsonp',
                 success: function(msg){
