@@ -81,6 +81,7 @@ jQuery(document).ready(function($) {
                 type: "POST",
                 url: "http://localhost:5000/api/sendMail",
                 data: str,
+                dataType: 'jsonp',
                 success: function(msg){
                    // alert(msg);
                     if(msg == 'OK') {

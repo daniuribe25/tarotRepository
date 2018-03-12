@@ -26,7 +26,6 @@ router.route('/').get(function(req,res){
 });
 
 router.route('/sendMail').post(function(req,res){
-    console.log(JSON.stringify(req.body));
     sendUserEmail(req.body)
     res.send("OK");
 });
@@ -35,8 +34,6 @@ app.use("/api",router);
 
 
 function sendUserEmail(form) {
-    console.log("form:" + JSON.stringify(form));
-    console.log(form);
     var transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
         port: 465,
@@ -55,7 +52,7 @@ function sendUserEmail(form) {
                         "<span style='font-weight: 600'>   Mensaje:</span>  "+form.message+"<br /><br />"+
                     "</div>";
     var mailOptions = {
-        from: 'dani.uribe25@gmail.com', // sender address
+        from: 'dani.uribe16@gmail.com', // sender address
         to: 'dani.uribe25@gmail.com', // list of receivers
         subject: 'Mensaje de '+ form.name, // Subject line
         text:  '',//, // plaintext body
