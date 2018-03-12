@@ -79,6 +79,7 @@ jQuery(document).ready(function($) {
         else var str = {name: $('#name').val(),cel: $('#cel').val(),subject: $('#subject').val(),message: $('#message').val()}	
             $.ajax({
                 type: "POST",
+                headers: {  'Access-Control-Allow-Origin': '*' },
                 url: "http://localhost:5000/api/sendMail",
                 data: str,
                 success: function(msg){
