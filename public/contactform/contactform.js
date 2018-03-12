@@ -80,7 +80,8 @@ jQuery(document).ready(function($) {
             $.ajax({
                 type: "POST",
                 headers: {  'Access-Control-Allow-Origin': '*' },
-                url: "http://localhost:5000/api/sendMail",
+                // url: "http://localhost:5000/api/sendMail",
+                url: "https://maestraisis.herokuapp.com/api/sendMail",
                 data: str,
                 success: function(msg){
                    // alert(msg);
