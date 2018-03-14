@@ -26,7 +26,6 @@ router.route('/').get(function(req,res){
 });
 
 router.route('/sendMail').post(function(req,res){
-    console.log(JSON.stringify(req.body));
     sendUserEmail(req.body)
     res.send("OK");
 });
@@ -35,16 +34,14 @@ app.use("/api",router);
 
 
 function sendUserEmail(form) {
-    console.log("form:" + JSON.stringify(form));
-    console.log(form);
     var transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
         port: 465,
         secure: true,
         service: 'Gmail',
         auth: {
-            user: 'dani.uribe25@gmail.com', // Your email id
-            pass: 'iamthebest123' // Your password
+            user: 'maestraisisk@gmail.com', // Your email id
+            pass: 'isismaestra' // Your password
         }
     });
     var htmlContent = "<div>"+

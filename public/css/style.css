@@ -505,7 +505,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   ================================================== */
 .block {
   color: #fff;
-  height: 490px;
+  height: 220px;
   overflow: hidden;
   padding-top: 85px;
 }
@@ -549,7 +549,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   width: 70px;
   height: 70px;
   margin-bottom: 15px;
-  background: #199EB8;
+  background: rgb(114, 28, 36);
   color: #fff;
   font-size: 24px;
   text-align: center;
