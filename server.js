@@ -38,7 +38,7 @@ router.route('/sendMail').get(function(req,res){
                subject: req.query.subject,
                message: req.query.message
             };
-    //sendUserEmail(body)
+    sendUserEmail(body)
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Access-Control-Allow-Credentials", "true");
     res.setHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
@@ -69,9 +69,9 @@ function sendUserEmail(form) {
                         "<span style='font-weight: 600'>   Mensaje:</span>  "+form.message+"<br /><br />"+
                     "</div>";
     var mailOptions = {
-        from: 'dani.uribe25@gmail.com', // sender address
-        to: 'dani.uribe25@gmail.com', // list of receivers
-        subject: 'Mensaje de '+ form.name, // Subject line
+        from: 'maestraisisk@gmail.com', // sender address
+        to: 'maestraisisk@gmail.com', // list of receivers
+        subject: 'Nuevo contacto de '+ form.name, // Subject line
         text:  '',//, // plaintext body
         html: htmlContent
     };
