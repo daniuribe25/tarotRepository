@@ -15,7 +15,13 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header('Access-Control-Allow-Methods', 'DELETE, PUT','POST','GET');
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
+     // intercept OPTIONS method
+     if ('OPTIONS' == req.method) {
+        res.send(200);
+      }
+      else {
+        next();
+      }
  });
  
 app.use(express.static(__dirname + '/public'));
@@ -37,6 +43,7 @@ router.route('/sendMail').get(function(req,res){
     res.setHeader("Access-Control-Allow-Credentials", "true");
     res.setHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
     res.setHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
+
     res.json("OK");
 });
 
