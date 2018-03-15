@@ -78,14 +78,12 @@ jQuery(document).ready(function($) {
         if( ferror ) return false; 
         else var str = {name: $('#name').val(),cel: $('#cel').val(),subject: $('#subject').val(),message: $('#message').val()}	
             $.ajax({
-                type: "POST",
+                type: "GET",
                 headers: {  
-                        'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8',
                         'Access-Control-Allow-Origin': '*' 
                 },
                 // url: "http://localhost:5000/api/sendMail",
-                url: "https://maestraisis.herokuapp.com/api/sendMail",
-                data: str,
+                url: "https://maestraisis.herokuapp.com/api/sendMail?name="+str.name+"&cel="+str.cel+"&subject="+str.subject+"&message="+str.message,
                 success: function(msg){
                    // alert(msg);
                     if(msg == 'OK') {

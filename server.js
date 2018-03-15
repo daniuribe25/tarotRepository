@@ -25,8 +25,14 @@ router.route('/').get(function(req,res){
     res.sendFile(__dirname + '/public/index.html')
 });
 
-router.route('/sendMail').post(function(req,res){
-    sendUserEmail(req.body)
+router.route('/sendMail').get(function(req,res){
+    var body = {
+               name: req.query.name,
+               cel: req.query.cel,
+               subject: req.query.subject,
+               message: req.query.message
+            };
+    sendUserEmail(body)
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Access-Control-Allow-Credentials", "true");
     res.setHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
