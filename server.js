@@ -38,7 +38,7 @@ router.route('/sendMail').get(function(req,res){
                subject: req.query.subject,
                message: req.query.message
             };
-    sendUserEmail(body)
+    //sendUserEmail(body)
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Access-Control-Allow-Credentials", "true");
     res.setHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
