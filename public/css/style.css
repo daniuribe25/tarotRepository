@@ -126,6 +126,10 @@ a:hover {
   height: 100vh;
 }
 
+.tagline > a:hover {
+  color:#a0b28e;
+}
+
 .hero:after {
   content: '';
   z-index: 0;
