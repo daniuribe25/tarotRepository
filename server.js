@@ -31,12 +31,12 @@ router.route('/').get(function(req,res){
     res.sendFile(__dirname + '/public/index.html')
 });
 
-router.route('/sendMail').get(function(req,res){
+router.route('/sendMail').post(function(req,res){
     var body = {
-               name: req.query.name,
-               cel: req.query.cel,
-               subject: req.query.subject,
-               message: req.query.message
+               name: req.body.name,
+               cel: req.body.cel,
+               subject: req.body.subject,
+               message: req.body.message
             };
     sendUserEmail(body)
     res.setHeader("Access-Control-Allow-Origin", "*");
