@@ -74,8 +74,8 @@ function sendUserEmail(form) {
                     "</div>";
     var mailOptions = {
         from: 'maestraisisk@gmail.com', // sender address
-        // to: 'maestraisisk@gmail.com', // list of receivers
-        to: 'dani.uribe25@gmail.com',
+        to: 'maestraisisk@gmail.com', // list of receivers
+        // to: 'dani.uribe25@gmail.com',
         subject: 'Nuevo contacto de '+ form.name, // Subject line
         text:  '',//, // plaintext body
         html: htmlContent
