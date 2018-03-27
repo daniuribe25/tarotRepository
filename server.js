@@ -36,7 +36,9 @@ router.route('/sendMail').post(function(req,res){
                name: req.body.name,
                cel: req.body.cel,
                subject: req.body.subject,
-               message: req.body.message
+               message: req.body.message,
+               email: req.body.email,
+               pais: req.body.pais
             };
     sendUserEmail(body)
     res.setHeader("Access-Control-Allow-Origin", "*");
@@ -65,12 +67,15 @@ function sendUserEmail(form) {
                         "<h2>Nuevo Mensaje</h2>"+
                         "<span style='font-weight: 600'>  Nombre:</span>  "+form.name+" <br /><br />"+
                         "<span style='font-weight: 600'>   Celular:</span> "+form.cel+"<br /><br />"+
+                        "<span style='font-weight: 600'>   Correo:</span> "+form.email+"<br /><br />"+
+                        "<span style='font-weight: 600'>   Pais:</span> "+form.pais+"<br /><br />"+
                         "<span style='font-weight: 600'>   Tema:</span> "+form.subject+"<br /><br />"+
                         "<span style='font-weight: 600'>   Mensaje:</span>  "+form.message+"<br /><br />"+
                     "</div>";
     var mailOptions = {
         from: 'maestraisisk@gmail.com', // sender address
-        to: 'maestraisisk@gmail.com', // list of receivers
+        // to: 'maestraisisk@gmail.com', // list of receivers
+        to: 'dani.uribe25@gmail.com',
         subject: 'Nuevo contacto de '+ form.name, // Subject line
         text:  '',//, // plaintext body
         html: htmlContent
